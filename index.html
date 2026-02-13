@@ -10,7 +10,6 @@
       font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px;
-      overflow: hidden;
     }
 
     img {
@@ -32,7 +31,11 @@
     .buttons {
       margin-top: 40px;
       position: relative;
-      height: 250px;
+      width: 100%;
+      max-width: 400px;
+      height: 220px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     button {
@@ -55,8 +58,8 @@
     .no {
       background-color: #adb5bd;
       color: white;
-      left: 50%;
       top: 80px;
+      left: 50%;
       transform: translateX(-50%);
     }
   </style>
@@ -70,7 +73,7 @@
 
   <div class="buttons">
     <button class="yes" onclick="valentineYes()">YES 💕</button>
-    <button class="no" onclick="runAway(this)">No 🙄</button>
+    <button class="no" onmouseover="runAway(this)">No 🙄</button>
   </div>
 
   <script>
@@ -81,7 +84,7 @@
 
         <div class="buttons">
           <button class="yes" onclick="finalYes()">🌹 Red Roses</button>
-          <button class="no" onclick="runAway(this)">🌸 Peony</button>
+          <button class="no" onmouseover="runAway(this)">🌸 Peony</button>
         </div>
       `;
     }
@@ -96,8 +99,9 @@
     }
 
     function runAway(button) {
-      const maxX = window.innerWidth - 150;
-      const maxY = window.innerHeight - 150;
+      const container = button.parentElement;
+      const maxX = container.clientWidth - button.offsetWidth;
+      const maxY = container.clientHeight - button.offsetHeight;
 
       const randomX = Math.random() * maxX;
       const randomY = Math.random() * maxY;
