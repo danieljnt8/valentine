@@ -29,10 +29,10 @@
     }
 
     .buttons {
-      margin-top: 40px;
+      margin-top: 35px;
       position: relative;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       height: 220px;
       margin-left: auto;
       margin-right: auto;
@@ -69,32 +69,47 @@
 
   <img src="us_1.jpg" alt="Us ❤️">
 
-  <h1>Will you be my Valentine? 💘</h1>
+  <h1>1️⃣ Do you love me? ❤️</h1>
 
   <div class="buttons">
-    <button class="yes" onclick="valentineYes()">YES 💕</button>
-    <button class="no" onmouseover="runAway(this)">No 🙄</button>
+    <button class="yes" onclick="q2()">Yes, I really do 💕</button>
+    <button class="no" onmouseover="runAway(this)">No, never 🙄</button>
   </div>
 
   <script>
-    function valentineYes() {
+    function q2() {
       document.body.innerHTML = `
-        <h1>One more important question 🌹</h1>
-        <p>What kind of roses do you want?</p>
+        <h1>I love you too babe 😘</h1>
+        <p>Now answer honestly…</p>
+
+        <h1>2️⃣ Am I handsome? 😌</h1>
 
         <div class="buttons">
-          <button class="yes" onclick="finalYes()">🌹 Red Roses</button>
-          <button class="no" onmouseover="runAway(this)">🌸 Peony</button>
+          <button class="yes" onclick="q3()">Yes, you are very 😍</button>
+          <button class="no" onmouseover="runAway(this)">No, you're not 😐</button>
         </div>
       `;
     }
 
-    function finalYes() {
+    function q3() {
       document.body.innerHTML = `
-        <h1>You chose correctly 😌❤️</h1>
-        <p>Red roses, just for you.</p>
-        <p>I love you so much.</p>
-        <p>Happy Valentine’s Day 🌹🌹🌹</p>
+        <h1>I know you will answer this 😏</h1>
+
+        <h1>3️⃣ Daniel or Lee Min Ho?</h1>
+
+        <div class="buttons">
+          <button class="yes" onclick="final()">Daniel everytime ❤️</button>
+          <button class="no" onmouseover="runAway(this)">Lee Min Ho 😳</button>
+        </div>
+      `;
+    }
+
+    function final() {
+      document.body.innerHTML = `
+        <h1>I know it babe 😌❤️</h1>
+        <p>You love me.</p>
+        <p>I love you.</p>
+        <p>Happy Valentine’s Day 💘</p>
       `;
     }
 
