@@ -12,7 +12,7 @@
       padding: 40px;
     }
 
-    img {
+    img.main {
       width: 90%;
       max-width: 320px;
       border-radius: 20px;
@@ -62,12 +62,40 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
+    /* IMAGE OPTIONS */
+    .image-options {
+      margin-top: 30px;
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: 260px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .choice {
+      width: 180px;
+      border-radius: 20px;
+      cursor: pointer;
+      position: absolute;
+      transition: 0.15s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    #daniel {
+      left: 0;
+    }
+
+    #leeminho {
+      right: 0;
+    }
   </style>
 </head>
 
 <body>
 
-  <img src="us_1.jpg" alt="Us ❤️">
+  <img src="us_1.jpg" class="main" alt="Us ❤️">
 
   <h1>1️⃣ Do you love me? ❤️</h1>
 
@@ -94,12 +122,11 @@
     function q3() {
       document.body.innerHTML = `
         <h1>I know you will answer this 😏</h1>
-
         <h1>3️⃣ Daniel or Lee Min Ho?</h1>
 
-        <div class="buttons">
-          <button class="yes" onclick="final()">Daniel everytime ❤️</button>
-          <button class="no" onmouseover="runAway(this)">Lee Min Ho 😳</button>
+        <div class="image-options">
+          <img src="daniel.jpg" id="daniel" class="choice" onclick="final()" alt="Daniel">
+          <img src="leeminho.jpg" id="leeminho" class="choice" onmouseover="runAway(this)" alt="Lee Min Ho">
         </div>
       `;
     }
@@ -107,22 +134,22 @@
     function final() {
       document.body.innerHTML = `
         <h1>I know it babe 😌❤️</h1>
-        <p>You love me.</p>
+        <p>You chose me.</p>
         <p>I love you.</p>
         <p>Happy Valentine’s Day 💘</p>
       `;
     }
 
-    function runAway(button) {
-      const container = button.parentElement;
-      const maxX = container.clientWidth - button.offsetWidth;
-      const maxY = container.clientHeight - button.offsetHeight;
+    function runAway(element) {
+      const container = element.parentElement;
+      const maxX = container.clientWidth - element.offsetWidth;
+      const maxY = container.clientHeight - element.offsetHeight;
 
       const randomX = Math.random() * maxX;
       const randomY = Math.random() * maxY;
 
-      button.style.left = randomX + "px";
-      button.style.top = randomY + "px";
+      element.style.left = randomX + "px";
+      element.style.top = randomY + "px";
     }
   </script>
 
